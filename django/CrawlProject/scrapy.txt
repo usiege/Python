@@ -1,0 +1,58 @@
+Last login: Wed Mar  7 11:54:50 on ttys035
+ ~/ ls
+Applications              Downloads                 Music                     iCloud 云盘（归档）
+Desktop                   Library                   Pictures
+Documents                 Movies                    Public
+ ~/ cd Documents 
+ ~/Documents/ cd usiege 
+ ~/Documents/usiege/ ls
+Chips                          GameDemo                       SwiftDevelopmentWithCocoa1stEd
+Demo                           OC_lib                         swift_Lib
+Django-project                 OpenGL_lbs                     wax
+Exercise                       SCNBook-code
+ ~/Documents/usiege/ cd Django-project 
+ ~/Documents/usiege/Django-project/ [develop*] ls
+Charm                   chapter01               function                python.py
+README.md               chapter02               hello.py                runboot-python-exercise
+Scrapy                  chapter03               hello.sh
+ ~/Documents/usiege/Django-project/ [develop*] scrapy startproject CrawlProject
+New Scrapy project 'CrawlProject', using template directory '/Library/Python/2.7/site-packages/scrapy/templates/project', created in:
+    /Users/user/Documents/usiege/Django-project/CrawlProject
+
+You can start your first spider with:
+    cd CrawlProject
+    scrapy genspider example example.com
+ ~/Documents/usiege/Django-project/ [develop*] ls
+Charm                   Scrapy                  chapter03               hello.sh
+CrawlProject            chapter01               function                python.py
+README.md               chapter02               hello.py                runboot-python-exercise
+ ~/Documents/usiege/Django-project/ [develop*] cd CrawlProject 
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] ls
+CrawlProject scrapy.cfg
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] ls
+CrawlProject scrapy.cfg
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] cd CrawlProject 
+ ~/Documents/usiege/Django-project/CrawlProject/CrawlProject/ [develop*] ls
+__init__.py    items.py       middlewares.py pipelines.py   settings.py    spiders
+ ~/Documents/usiege/Django-project/CrawlProject/CrawlProject/ [develop*] cd 
+ ~/ cd ~/Documents/usiege/Django-project/CrawlProject
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] tree
+zsh: command not found: tree
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] ls tree
+ls: tree: No such file or directory
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] ls
+CrawlProject scrapy.cfg
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] tree
+.
+├── CrawlProject
+│   ├── __init__.py
+│   ├── items.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+│   ├── settings.py
+│   └── spiders
+│       └── __init__.py
+└── scrapy.cfg
+
+2 directories, 7 files
+ ~/Documents/usiege/Django-project/CrawlProject/ [develop*] 
