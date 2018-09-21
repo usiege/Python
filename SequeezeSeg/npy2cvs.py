@@ -5,6 +5,7 @@ import pandas as pa
 
 import argparse
 
+# .npy to nparray
 def load(path):
 	npy = np.load(path)
 	print(np.shape(npy))
