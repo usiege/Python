@@ -12,16 +12,21 @@ user = friends[0]["UserName"]
 dir_path = "./image"
 num = 0
 for i in friends:
+    file_path = dir_path + "/" + str(num) + ".jpg"
+    num += 1
+    if os.path.exists(file_path):
+        print(file_path)
+        continue
     img = itchat.get_head_img(userName=i["UserName"])
-    fileImage = open(dir_path + "/" + str(num) + ".jpg",'wb')
+    fileImage = open(file_path,'wb')
     fileImage.write(img)
     fileImage.close()
-    num += 1
+    
 
 ls = os.listdir(dir_path)
 each_size = int(math.sqrt(float(640*640)/len(ls)))
 lines = int(640/each_size)
-image = Image.new('RGBA', (640, 640))
+image = Image.new('RGB', (640, 640))
 x = 0
 y = 0
 for i in range(0,len(ls)+1):
