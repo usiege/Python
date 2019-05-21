@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 #-*-coding=utf-8-*-
 import itchat
 import math
@@ -9,7 +8,10 @@ itchat.auto_login()
 friends = itchat.get_friends(update=True)[0:]
 user = friends[0]["UserName"]
 
-dir_path = "./image"
+dir_path = "./images"
+if not os.path.exists(dir_path):
+    os.mkdir(dir_path)
+
 num = 0
 for i in friends:
     file_path = dir_path + "/" + str(num) + ".jpg"

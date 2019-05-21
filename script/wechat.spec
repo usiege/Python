@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['wechat_friends.py'],
-             pathex=['/media/charles/exFAT/working/Python/script'],
+a = Analysis(['wechat.py'],
+             pathex=['K:\\working\\Python\\script'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='wechat_friends',
+          name='wechat',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
