@@ -67,3 +67,4 @@ shuffle - 是否在分割之前对数据进行洗牌（默认True）
 分割后的列表，长度=2*len(arrays),
 　　(train-test split)
 """
+# page 318
