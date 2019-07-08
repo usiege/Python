@@ -3,3 +3,8 @@
 
 # parse parameter
 import argparse
+
+# bag to bin
+import pypcd
+
+# 
