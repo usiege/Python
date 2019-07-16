@@ -5,7 +5,23 @@ Python practice.
 <img src='bg.png'>
 </p>
 
+## Important Search
 
+- [文件操作](./script/file_op.py)
+
+
+## Schedule
+
+
+
+### 2019-07-15
+
+- [线性模型预测自行车流量](./projects/handbook/05_6_4.py)
+
+### 2019-07-09
+> 线性回归
+
+- [5.6线性回归](./projects/handbook/05_6.py)
 
 ### 2019-07-04
 > 支持向量机

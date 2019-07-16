@@ -17,6 +17,12 @@ def file_list(dir):
         print(file) # list under dir
 
 
+import shutil
+# copy file
+def copy_file(source, dest):
+    shutil.copy(source, dest)
+
+
 # ----------------------      file store       ------------------------ #
 # json
 import json
@@ -37,6 +43,8 @@ def json_save(path="/path/name.json"):
         json.dump(dic, f)
 
 # xml
+def xml_read(path='/name.xml'):
+    pass
 
 # txt
 
