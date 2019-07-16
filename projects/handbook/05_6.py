@@ -1,10 +1,16 @@
 # %%
 
-from sklearn
-%matplotlib inline
-import matplotlib.pyplot as plt
-import seaborn as sns; sns.set()
+# %matplotlib inline
 import numpy as np
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import Ridge
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
 
 rng = np.random.RandomState(1)
 x = 10 * rng.rand(50)
@@ -14,7 +20,6 @@ plt.scatter(x, y)
 
 # %%
 
-from sklearn.linear_model import LinearRegression
 model = LinearRegression(fit_intercept=True)
 model.fit(x[:, np.newaxis], y)
 
@@ -25,10 +30,10 @@ plt.scatter(x, y)
 plt.plot(xfit, yfit)
 
 
-#%%
+# %%
 
-print("Model slope: ", model.coef_[0]) # 斜率
-print("Model intercept:: ", model.intercept_) # 截距
+print("Model slope: ", model.coef_[0])  # 斜率
+print("Model intercept:: ", model.intercept_)  # 截距
 
 rng = np.random.RandomState(1)
 X = 10 * rng.rand(100, 3)
@@ -38,22 +43,20 @@ model.fit(X, y)
 print(model.intercept_)
 print(model.coef_)
 
-#%%
+# %%
 
-## 多项式投影
-## 一维投影到高维
-from sklearn.preprocessing import PolynomialFeatures
+# 多项式投影
+# 一维投影到高维
 x = np.array([2, 3, 4])
 poly = PolynomialFeatures(3, include_bias=False)
 poly.fit_transform(x[:, None])
 
-from sklearn.pipeline import make_pipeline
 poly_model = make_pipeline(PolynomialFeatures(7),
-                          LinearRegression())
+                           LinearRegression())
 
 rng = np.random.RandomState(0)
-x = 10 * rng.rand(50) # 随机样本
-y = np.sin(x) + 0.1 * rng.randn(50) # 标准正态分布
+x = 10 * rng.rand(50)  # 随机样本
+y = np.sin(x) + 0.1 * rng.randn(50)  # 标准正态分布
 
 poly_model.fit(x[:, np.newaxis], y)
 yfit = poly_model.predict(xfit[:, np.newaxis])
@@ -62,10 +65,10 @@ plt.scatter(x, y)
 plt.plot(xfit, yfit)
 
 
-#%%
+# %%
 
-## 高斯基函数
-from sklearn.base import BaseEstimator, TransformerMixin
+# 高斯基函数
+
 
 class GaussianFeatures(BaseEstimator, TransformerMixin):
 
@@ -83,10 +86,11 @@ class GaussianFeatures(BaseEstimator, TransformerMixin):
         self.centers_ = np.linspace(X.min(), X.max(), self.N)
         self.width_ = self.width_factor * (self.centers_[1] - self.centers_[0])
         return self
-    
+
     def transform(self, X):
         return self._gauss_basis(X[:, :, np.newaxis], self.centers_,
-                                self.width_, axis=1)
+                                 self.width_, axis=1)
+
 
 gauss_model = make_pipeline(GaussianFeatures(20), LinearRegression())
 
@@ -97,8 +101,8 @@ plt.scatter(x, y)
 plt.plot(xfit, yfit)
 plt.xlim(0, 10)
 
-#%%
-## 正则化
+# %%
+# 正则化
 model = make_pipeline(GaussianFeatures(30),
                       LinearRegression())
 model.fit(x[:, np.newaxis], y)
@@ -109,7 +113,8 @@ plt.plot(xfit, model.predict(xfit[:, np.newaxis]))
 plt.xlim(0, 10)
 plt.ylim(-1.5, 1.5)
 
-#%%
+# %%
+
 
 def basis_plot(model, title=None):
     fig, ax = plt.subplots(2, sharex=True)
@@ -125,22 +130,21 @@ def basis_plot(model, title=None):
     ax[1].plot(model.steps[0][1].centers_, model.steps[1][1].coef_)
     ax[1].set(xlabel='bisis location', ylabel='coefficient', xlim=(0, 10))
 
+
 model = make_pipeline(GaussianFeatures(30), LinearRegression())
 basis_plot(model, title='bp')
 
-#%%
+# %%
 
-## Tikhonov regularization 吉洪诺夫正则化
-## 就是L2范数正则化
+# Tikhonov regularization 吉洪诺夫正则化
+# 就是L2范数正则化
 
-from sklearn.linear_model import Ridge
 model = make_pipeline(GaussianFeatures(30), Ridge(alpha=0.1))
 basis_plot(model, title='Ridge')
 
-#%%
+# %%
 
-## L1范数 Lasso正则化
+# L1范数 Lasso正则化
 
-from sklearn.linear_model import Lasso
 model = make_pipeline(GaussianFeatures(30), Lasso(alpha=0.001))
 basis_plot(model, title='Lasso')

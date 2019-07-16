@@ -14,7 +14,9 @@ Python practice.
 
 
 
+
 ### 2019-07-15
+> deprecated
 
 - [线性模型预测自行车流量](./projects/handbook/05_6_4.py)
 
