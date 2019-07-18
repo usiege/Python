@@ -13,7 +13,10 @@ Python practice.
 ## Schedule
 
 
+### 2019-07-18
 
+- [5.8决策树与随机森林](./projects/handbook/05_8.py)
+- [5.8.4随机森林识别手写数字](./projects/handbook/05_8_4.py)
 
 ### 2019-07-15
 > deprecated
