@@ -5,14 +5,33 @@ Python practice.
 <img src='bg.png'>
 </p>
 
-## Important Search
+## 常用工具集
 
 - [文件操作](./script/file_op.py)
+
+- [Github生成[TOC]](./script/github_toc.py)
 
 
 ## Schedule
 
+## 2022
 
+
+
+### 2022-06-08
+
+- [抖音订单自动识别](./script/douyin.py)
+
+工具可以自动对网页上的内容进行操作，该项目需要用到`opencv`和`pyautogui`库；
+
+
+### 2022-03
+
+- [youtube视频音频提取](./script/youtube.py)
+
+
+
+## 2021 pre
 
 ### 2021-12-20
 
