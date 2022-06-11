@@ -17,7 +17,6 @@ Python practice.
 ## 2022
 
 
-
 ### 2022-06-08
 
 - [抖音订单自动识别](./script/douyin.py)
