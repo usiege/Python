@@ -17,6 +17,12 @@ Python practice.
 ## 2022
 
 
+
+### 2022-06-14
+
+- [亚马逊书本评论爬取程序](https://github.com/DisasterMeng/Gui-Amazon-Review)
+
+
 ### 2022-06-08
 
 - [抖音订单自动识别](./script/douyin.py)
